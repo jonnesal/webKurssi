@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+	This page demonstrates a form.
+	-->
+	<head>
+		<meta charset="utf-8"/>
+		<title>Demonstrating HTML forms</title>
+	</head>
+	
+	<body>
+		<h1>Turnitin</h1>
+		<form  lang="fi" action="">
+			<div>
+				Name: <input type="text" name="studentname" placeholder="first + last name" oninvalid="this.setCustomValidity('Syötit väärää tietoa')"/>
+			</div>
+			<div>
+				Student id: <input type="text" name="id"  placeholder="000000" pattern=".{6,}" oninvalid="this.setCustomValidity('pitää olla 6 tai pidempi')"/>
+			</div>
+			<div>
+				Email: <input type="email" name="email" placeholder="name@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" oninvalid="this.setCustomValidity('Syötit väärää tietoa')" required />
+
+				<!--
+				Make an input named "email"
+				-->
+			</div>
+			<div>
+				Assignment: <input type="text" name="assignment"oninvalid="this.setCustomValidity('Syötit väärää tietoa')"  />
+				<!--
+				Make an input named "assignment"
+				-->
+				
+			</div>
+
+			<div>
+				Code: <input type="text" name="code" oninvalid="this.setCustomValidity('Syötit väärää tietoa')" />
+				<!--
+				Make an input named "code" which is a text area to put student's code into.
+				-->
+				
+			</div>
+			<div>
+				 <label>Cheat:<input type="checkbox" name="cheat"></label>
+			<!--
+				Make an input named "cheat" which is a check box the student must check.
+			-->
+			</div>
+			<div>
+				<fieldset>
+					<legend>Credit Card</legend>
+					<label><input type="radio" name="payment" value="Visa">Visa</label>
+					<label><input type="radio" name="payment" value="paypal">paypal </label>
+					<label><input type="radio" name="payment" value="mastercard">mastercard </label>
+				</fieldset>
+
+				<!--
+                    Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
+                -->
+			</div>
+			<div>
+				Score:   <input list="scores" name="score" pattern = "[1-9][0-9]{0,4}" required>
+				<datalist id="scores">
+					<option value="-10">
+					<option value="20">
+					<option value="30">
+					<option value="40">
+					<option value="50">
+				</datalist>
+			<!--
+				Make an input named "score" which is a list of choices for the score 
+			-->
+			</div>
+			<input type="submit" />
+		</form>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
+	</body>
+</html>
